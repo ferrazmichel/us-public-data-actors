@@ -3,12 +3,39 @@
 from __future__ import annotations
 
 import os
+from pathlib import Path
 from typing import Literal
 
 from apify import Actor
 from pydantic import BaseModel, Field, field_validator
 
 from .dol_client import DolApiError, DolOshaClient, build_mcp_summary
+
+_PLACEHOLDER_ENV_VALUES = frozenset({"replace_with_your_free_dol_api_key"})
+
+
+def _load_local_env(env_path: Path | None = None) -> None:
+    """Load KEY=VALUE pairs from a local .env file without overriding existing env vars."""
+    path = env_path or (Path(__file__).resolve().parent.parent / ".env")
+    if not path.is_file():
+        return
+
+    for raw_line in path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        if line.startswith("export "):
+            line = line[len("export ") :].strip()
+        key, _, value = line.partition("=")
+        key = key.strip()
+        value = value.strip()
+        if not key:
+            continue
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in ("'", '"'):
+            value = value[1:-1]
+        if value in _PLACEHOLDER_ENV_VALUES:
+            continue
+        os.environ.setdefault(key, value)
 
 
 class ActorInput(BaseModel):
@@ -24,13 +51,15 @@ class ActorInput(BaseModel):
     outputMode: Literal["detailed", "mcp_summary"] = Field(default="detailed")
     dolApiKey: str | None = Field(default=None)
 
-    @field_validator("state")
+    @field_validator("state", mode="before")
     @classmethod
-    def _normalize_state(cls, value: str | None) -> str | None:
-        if not value:
+    def _normalize_state(cls, value: object) -> object:
+        if value is None:
             return None
-        cleaned = value.strip().upper()
-        return cleaned or None
+        if isinstance(value, str):
+            cleaned = value.strip().upper()
+            return cleaned or None
+        return value
 
 
 async def _safe_charge(event_name: str, count: int = 1) -> None:
@@ -52,6 +81,7 @@ async def _safe_charge(event_name: str, count: int = 1) -> None:
 
 async def main() -> None:
     """Run the OSHA Safety & Compliance Actor."""
+    _load_local_env()
     async with Actor:
         raw_input = await Actor.get_input() or {}
         cfg = ActorInput.model_validate(raw_input)

@@ -23,7 +23,7 @@ us-public-data-actors/
 
 | Ordem | Slug do Actor | Fonte Oficial EUA | Público / Caso de Uso | Status |
 | :--- | :--- | :--- | :--- | :--- |
-| **#1** | [`osha-safety-compliance-mcp`](actors/osha-safety-compliance-mcp) | DOL / OSHA Enforcement API (`data.dol.gov`) | Due diligence de fornecedores, seguradoras, escritórios jurídicos e agentes B2B | Scaffold pronto (falta teste real) |
+| **#1** | [`osha-safety-compliance-mcp`](actors/osha-safety-compliance-mcp) | DOL / OSHA Enforcement API (`apiprod.dol.gov/v4`) | Due diligence de fornecedores, seguradoras, escritórios jurídicos e agentes B2B | Validado com API DOL v4 real (pronto para `apify push`) |
 | **#2** | `epa-echo-environmental-mcp` | EPA ECHO REST API | Consultorias ESG/ambientais, due diligence imobiliária e industrial | Planejado |
 | **#3** | `fmcsa-carrier-safety-mcp` | USDOT / FMCSA (`data.transportation.gov`) | Seguradoras de carga, corretoras de frete, factoring e recrutamento | Planejado |
 
@@ -51,8 +51,8 @@ us-public-data-actors/
 | :--- | :--- | :--- |
 | Definir plano de negócios, precificação PPE e análise de concorrência | IA | ✅ |
 | Estruturar scaffold completo do Actor #1 (`osha-safety-compliance-mcp`) | IA | ✅ |
-| Subir repositório para o GitHub pessoal (`ferrazmichel/us-public-data-actors`) | Usuário | ⬜ |
-| Solicitar `DOL_API_KEY` gratuita e executar teste real ponta a ponta no feriado | Usuário | ⬜ |
-| Ajustar eventual detalhe de endpoint/campos após retorno real da API DOL | IA + Usuário | ⬜ |
+| Subir repositório para o GitHub pessoal (`ferrazmichel/us-public-data-actors`) | Usuário | ✅ |
+| Solicitar `DOL_API_KEY` gratuita e executar teste real ponta a ponta no feriado | Usuário | ✅ |
+| Ajustar eventual detalhe de endpoint/campos após retorno real da API DOL | IA + Usuário | ✅ |
 | Publicar Actor #1 na Apify Store com cobrança PPE e suporte MCP | Usuário | ⬜ |
 | Construir e testar Actor #2 (`epa-echo-environmental-mcp`) | IA + Usuário | ⬜ |

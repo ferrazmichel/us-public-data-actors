@@ -6,7 +6,7 @@
 
 ## Actor #1 (MVP em Construção) — `osha-safety-compliance-mcp`
 
-- **Fonte oficial:** U.S. Department of Labor (DOL) Open Data API (`https://data.dol.gov/get/`), requer `X-API-KEY` gratuita do portal da DOL.
+- **Fonte oficial:** U.S. Department of Labor (DOL) Open Data API v4 (`https://apiprod.dol.gov/v4/get/`), requer query parameter `X-API-KEY` gratuito do portal da DOL.
 - **Dor que resolve:** Consultar inspeções, violações e multas de segurança do trabalho (OSHA) por empresa, estado, código NAICS e intervalo de datas sem precisar lidar com paginação manual (teto da API é de **200 registros por chamada**) nem cruzar manualmente `inspection` e `violation` por `activity_nr`.
 - **Diferencial MCP:** Modo `mcp_summary` entrega total de inspeções, número de violações (Serious / Willful / Repeat), soma de multas iniciais vs. atuais e top padrões OSHA citados — em poucos KB de JSON.
 - **Diretório:** [`actors/osha-safety-compliance-mcp`](../actors/osha-safety-compliance-mcp).
@@ -48,7 +48,7 @@
 | Marco | Actor | Status |
 | :--- | :--- | :--- |
 | Scaffold completo e código inicial pronto para teste real | `osha-safety-compliance-mcp` | ✅ |
-| Teste real com `DOL_API_KEY` + ajustes de schema/campos da API DOL | `osha-safety-compliance-mcp` | ⬜ |
+| Teste real com `DOL_API_KEY` + ajustes de schema/campos da API DOL | `osha-safety-compliance-mcp` | ✅ |
 | Publicação na Apify Store + ativação de Standby Mode e PPE | `osha-safety-compliance-mcp` | ⬜ |
 | Pesquisa de endpoints reais + scaffold completo | `epa-echo-environmental-mcp` | ⬜ |
 | Teste real e publicação na Apify Store | `epa-echo-environmental-mcp` | ⬜ |
