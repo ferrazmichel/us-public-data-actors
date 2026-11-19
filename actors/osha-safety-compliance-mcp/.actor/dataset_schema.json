@@ -1,0 +1,36 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "OSHA Inspections Overview",
+      "transformation": {
+        "fields": [
+          "activity_nr",
+          "estab_name",
+          "site_city",
+          "site_state",
+          "open_date",
+          "insp_type",
+          "naics_code",
+          "violation_count",
+          "total_current_penalty"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "activity_nr": { "label": "Activity #", "format": "text" },
+          "estab_name": { "label": "Establishment", "format": "text" },
+          "site_city": { "label": "City", "format": "text" },
+          "site_state": { "label": "State", "format": "text" },
+          "open_date": { "label": "Open Date", "format": "text" },
+          "insp_type": { "label": "Type", "format": "text" },
+          "naics_code": { "label": "NAICS", "format": "text" },
+          "violation_count": { "label": "Violations", "format": "number" },
+          "total_current_penalty": { "label": "Current Penalties ($)", "format": "number" }
+        }
+      }
+    }
+  }
+}

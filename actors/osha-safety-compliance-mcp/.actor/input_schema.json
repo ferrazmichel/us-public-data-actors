@@ -1,0 +1,75 @@
+{
+  "title": "OSHA Safety & Compliance Search Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "establishmentName": {
+      "title": "Establishment / Company Name",
+      "type": "string",
+      "description": "Company or establishment name to search in OSHA inspection records (e.g. 'Amazon', 'Tesla', 'Acme Construction').",
+      "editor": "textfield",
+      "prefill": "Amazon"
+    },
+    "state": {
+      "title": "US State Code (2 letters)",
+      "type": "string",
+      "description": "Optional two-letter US state abbreviation (e.g. TX, CA, NY, OH).",
+      "editor": "textfield",
+      "maxLength": 2,
+      "pattern": "^[A-Za-z]{2}$"
+    },
+    "naicsCode": {
+      "title": "NAICS Industry Code",
+      "type": "string",
+      "description": "Optional 2- to 6-digit NAICS industry code filter (e.g. '236220' or '493110').",
+      "editor": "textfield"
+    },
+    "openDateFrom": {
+      "title": "Inspection Open Date From (YYYY-MM-DD)",
+      "type": "string",
+      "description": "Optional earliest inspection open date in YYYY-MM-DD format.",
+      "editor": "textfield",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "openDateTo": {
+      "title": "Inspection Open Date To (YYYY-MM-DD)",
+      "type": "string",
+      "description": "Optional latest inspection open date in YYYY-MM-DD format.",
+      "editor": "textfield",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "includeViolations": {
+      "title": "Include Violations & Penalties",
+      "type": "boolean",
+      "description": "Fetch linked OSHA citations/violations and penalty amounts for each inspection by activity_nr.",
+      "default": true
+    },
+    "maxRecords": {
+      "title": "Maximum Inspection Records",
+      "type": "integer",
+      "description": "Maximum number of inspections to retrieve across paginated DOL API calls.",
+      "default": 50,
+      "minimum": 1,
+      "maximum": 1000
+    },
+    "outputMode": {
+      "title": "Output Mode",
+      "type": "string",
+      "description": "Choose 'detailed' for full inspection rows or 'mcp_summary' for a token-efficient aggregate JSON summary ideal for AI agents.",
+      "editor": "select",
+      "enum": ["detailed", "mcp_summary"],
+      "enumTitles": [
+        "Detailed Dataset (Full Inspections + Violations)",
+        "MCP Summary (Token-Efficient Risk Digest + Inspections)"
+      ],
+      "default": "detailed"
+    },
+    "dolApiKey": {
+      "title": "DOL API Key (Optional Override)",
+      "type": "string",
+      "description": "Optional US Department of Labor Open Data API Key. Leave blank to use the Actor's configured DOL_API_KEY.",
+      "editor": "textfield",
+      "isSecret": true
+    }
+  }
+}

@@ -1,0 +1,58 @@
+# US Public Data Actors & MCP Tools (Apify Store Portfolio)
+
+> Portfólio de Apify Actors e ferramentas compatíveis com **MCP (Model Context Protocol)** que transformam bases públicas oficiais dos Estados Unidos em dados limpos, paginados e prontos para agentes de IA e equipes B2B de compliance, logística e vendas.
+
+---
+
+## Arquitetura do Portfólio
+
+```text
+us-public-data-actors/
+├── AGENTS.md
+├── docs/
+│   ├── PLANO_DE_NEGOCIOS.md       # Estudo de mercado, concorrência e precificação PPE
+│   ├── ROADMAP_ACTORS.md          # Especificação dos 3 primeiros Actors + backlog
+│   └── GUIA_INICIO_FERIADO.md     # Checklist passo a passo para testar e publicar em casa
+└── actors/
+    └── osha-safety-compliance-mcp/ # Actor #1 (MVP pronto para teste real com DOL_API_KEY)
+```
+
+---
+
+## Actors Planejados
+
+| Ordem | Slug do Actor | Fonte Oficial EUA | Público / Caso de Uso | Status |
+| :--- | :--- | :--- | :--- | :--- |
+| **#1** | [`osha-safety-compliance-mcp`](actors/osha-safety-compliance-mcp) | DOL / OSHA Enforcement API (`data.dol.gov`) | Due diligence de fornecedores, seguradoras, escritórios jurídicos e agentes B2B | Scaffold pronto (falta teste real) |
+| **#2** | `epa-echo-environmental-mcp` | EPA ECHO REST API | Consultorias ESG/ambientais, due diligence imobiliária e industrial | Planejado |
+| **#3** | `fmcsa-carrier-safety-mcp` | USDOT / FMCSA (`data.transportation.gov`) | Seguradoras de carga, corretoras de frete, factoring e recrutamento | Planejado |
+
+---
+
+## Pré-requisitos para Executar Localmente (em Casa)
+
+- Python **3.12+**
+- Conta gratuita na [Apify](https://apify.com) e `apify-cli` (ou `docker`)
+- Chave gratuita da API do Departamento do Trabalho dos EUA (DOL) para o Actor #1 (instruções detalhadas em [`docs/GUIA_INICIO_FERIADO.md`](docs/GUIA_INICIO_FERIADO.md))
+
+---
+
+## Documentação
+
+- [`docs/PLANO_DE_NEGOCIOS.md`](docs/PLANO_DE_NEGOCIOS.md)
+- [`docs/ROADMAP_ACTORS.md`](docs/ROADMAP_ACTORS.md)
+- [`docs/GUIA_INICIO_FERIADO.md`](docs/GUIA_INICIO_FERIADO.md)
+
+---
+
+## Tabela de Atividades
+
+| Atividade | Responsável | Status |
+| :--- | :--- | :--- |
+| Definir plano de negócios, precificação PPE e análise de concorrência | IA | ✅ |
+| Estruturar scaffold completo do Actor #1 (`osha-safety-compliance-mcp`) | IA | ✅ |
+| Subir repositório para o GitHub pessoal (`ferrazmichel/us-public-data-actors`) | Usuário | ⬜ |
+| Solicitar `DOL_API_KEY` gratuita e executar teste real ponta a ponta no feriado | Usuário | ⬜ |
+| Ajustar eventual detalhe de endpoint/campos após retorno real da API DOL | IA + Usuário | ⬜ |
+| Publicar Actor #1 na Apify Store com cobrança PPE e suporte MCP | Usuário | ⬜ |
+| Construir e testar Actor #2 (`epa-echo-environmental-mcp`) | IA + Usuário | ⬜ |
