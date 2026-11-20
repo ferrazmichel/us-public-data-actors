@@ -24,7 +24,7 @@ us-public-data-actors/
 | Ordem | Slug do Actor | Fonte Oficial EUA | Público / Caso de Uso | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **#1** | [`osha-safety-compliance-mcp`](actors/osha-safety-compliance-mcp) | DOL / OSHA Enforcement API (`apiprod.dol.gov/v4`) | Due diligence de fornecedores, seguradoras, escritórios jurídicos e agentes B2B | Publicado na Apify Store (PPE $5/1k) ✅ |
-| **#2** | `epa-echo-environmental-mcp` | EPA ECHO REST API | Consultorias ESG/ambientais, due diligence imobiliária e industrial | Planejado |
+| **#2** | [`epa-echo-environmental-mcp`](actors/epa-echo-environmental-mcp) | EPA ECHO REST API (`echodata.epa.gov`) | Consultorias ESG/ambientais, due diligence imobiliária e industrial | Construído, testado e publicado na Apify Platform (pronto para Store) ✅ |
 | **#3** | `fmcsa-carrier-safety-mcp` | USDOT / FMCSA (`data.transportation.gov`) | Seguradoras de carga, corretoras de frete, factoring e recrutamento | Planejado |
 
 ---
