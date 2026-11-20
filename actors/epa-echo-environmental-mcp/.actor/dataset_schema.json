@@ -1,41 +1,40 @@
 {
   "actorSpecification": 1,
-  "fields": {
-    "registryId": {
-      "type": "string",
-      "description": "EPA Facility Registry Service (FRS) ID"
-    },
-    "facilityName": {
-      "type": "string",
-      "description": "Regulated facility name"
-    },
-    "city": {
-      "type": "string",
-      "description": "Facility city"
-    },
-    "state": {
-      "type": "string",
-      "description": "Two-letter US state code"
-    },
-    "complianceStatus": {
-      "type": "string",
-      "description": "Overall EPA compliance status"
-    },
-    "hasSignificantNonCompliance": {
-      "type": "boolean",
-      "description": "Flag indicating if the facility has Significant Non-Compliance (SNC)"
-    },
-    "totalPenalties": {
-      "type": "number",
-      "description": "Total environmental penalties in USD"
-    },
-    "formalEnforcementActionCount": {
-      "type": "integer",
-      "description": "Count of formal EPA enforcement actions"
-    },
-    "echoReportUrl": {
-      "type": "string",
-      "description": "Official EPA Detailed Facility Report URL"
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "Regulated Facilities Overview",
+      "transformation": {
+        "fields": [
+          "registry_id",
+          "facility_name",
+          "city",
+          "state",
+          "compliance_status",
+          "has_significant_non_compliance",
+          "quarters_in_non_compliance",
+          "inspection_count",
+          "formal_enforcement_action_count",
+          "total_penalties",
+          "echo_report_url"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "registry_id": { "label": "Registry ID", "format": "text" },
+          "facility_name": { "label": "Facility Name", "format": "text" },
+          "city": { "label": "City", "format": "text" },
+          "state": { "label": "State", "format": "text" },
+          "compliance_status": { "label": "Compliance Status", "format": "text" },
+          "has_significant_non_compliance": { "label": "SNC?", "format": "boolean" },
+          "quarters_in_non_compliance": { "label": "NC Quarters", "format": "number" },
+          "inspection_count": { "label": "Inspections", "format": "number" },
+          "formal_enforcement_action_count": { "label": "Formal Actions", "format": "number" },
+          "total_penalties": { "label": "Penalties ($)", "format": "number" },
+          "echo_report_url": { "label": "ECHO Report", "format": "link" }
+        }
+      }
     }
   }
 }

@@ -1,10 +1,16 @@
 {
-  "actorSpecification": 1,
-  "fields": {
+  "actorOutputSchemaVersion": 1,
+  "title": "EPA ECHO Environmental Compliance Output",
+  "properties": {
     "summary": {
+      "type": "string",
       "title": "MCP Executive Environmental Risk Summary",
-      "type": "object",
-      "description": "Compact high-level environmental risk assessment and violation metrics for AI agents."
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys/OUTPUT"
+    },
+    "facilities": {
+      "type": "string",
+      "title": "Regulated Facilities Dataset",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
     }
   }
 }
