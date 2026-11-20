@@ -1,0 +1,62 @@
+{
+  "title": "EPA ECHO Environmental Compliance Search Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "facilityName": {
+      "title": "Facility / Company Name",
+      "type": "string",
+      "description": "Name of the facility or operating company (e.g. 'Tesla', 'Amazon', 'Exxon').",
+      "editor": "textfield",
+      "prefill": "Tesla"
+    },
+    "state": {
+      "title": "US State Code (2 letters)",
+      "type": "string",
+      "description": "Two-letter US state postal abbreviation (e.g. 'TX', 'CA', 'OH').",
+      "editor": "textfield",
+      "maxLength": 2,
+      "prefill": "TX"
+    },
+    "city": {
+      "title": "City Name",
+      "type": "string",
+      "description": "City where the regulated facility is located.",
+      "editor": "textfield"
+    },
+    "zipCode": {
+      "title": "ZIP Code (5 digits)",
+      "type": "string",
+      "description": "Five-digit US postal ZIP code.",
+      "editor": "textfield"
+    },
+    "naicsCode": {
+      "title": "NAICS Industry Code",
+      "type": "string",
+      "description": "North American Industry Classification System code (e.g. '336111' for Automobile Manufacturing).",
+      "editor": "textfield"
+    },
+    "significantNonComplianceOnly": {
+      "title": "Significant Non-Compliance (SNC) Only",
+      "type": "boolean",
+      "description": "Filter strictly for facilities currently flagged by the EPA as having Significant Non-Compliance.",
+      "default": false
+    },
+    "maxRecords": {
+      "title": "Maximum Facility Records",
+      "type": "integer",
+      "description": "Maximum number of facility records to return and push to the dataset.",
+      "minimum": 1,
+      "maximum": 200,
+      "default": 50
+    },
+    "outputMode": {
+      "title": "Output Mode",
+      "type": "string",
+      "description": "Choose between detailed dataset records or a compact MCP executive risk summary.",
+      "enum": ["detailed", "mcp_summary"],
+      "default": "detailed",
+      "editor": "select"
+    }
+  }
+}

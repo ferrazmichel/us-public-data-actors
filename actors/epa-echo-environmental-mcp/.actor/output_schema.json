@@ -1,0 +1,10 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "summary": {
+      "title": "MCP Executive Environmental Risk Summary",
+      "type": "object",
+      "description": "Compact high-level environmental risk assessment and violation metrics for AI agents."
+    }
+  }
+}

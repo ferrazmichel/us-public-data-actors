@@ -1,0 +1,41 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "registryId": {
+      "type": "string",
+      "description": "EPA Facility Registry Service (FRS) ID"
+    },
+    "facilityName": {
+      "type": "string",
+      "description": "Regulated facility name"
+    },
+    "city": {
+      "type": "string",
+      "description": "Facility city"
+    },
+    "state": {
+      "type": "string",
+      "description": "Two-letter US state code"
+    },
+    "complianceStatus": {
+      "type": "string",
+      "description": "Overall EPA compliance status"
+    },
+    "hasSignificantNonCompliance": {
+      "type": "boolean",
+      "description": "Flag indicating if the facility has Significant Non-Compliance (SNC)"
+    },
+    "totalPenalties": {
+      "type": "number",
+      "description": "Total environmental penalties in USD"
+    },
+    "formalEnforcementActionCount": {
+      "type": "integer",
+      "description": "Count of formal EPA enforcement actions"
+    },
+    "echoReportUrl": {
+      "type": "string",
+      "description": "Official EPA Detailed Facility Report URL"
+    }
+  }
+}
