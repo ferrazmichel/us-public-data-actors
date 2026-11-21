@@ -1,0 +1,16 @@
+{
+  "actorSpecification": 1,
+  "name": "fmcsa-carrier-safety-mcp",
+  "title": "FMCSA & USDOT Carrier Safety, Authority & Leads (MCP-Ready)",
+  "description": "Vet US motor carriers and generate trucking leads via official USDOT/FMCSA datasets: safety ratings, active MC authority, BIPD insurance coverage, fleet size, contacts, and compact MCP risk summaries for AI agents.",
+  "version": "0.1",
+  "meta": {
+    "templateId": "python-start"
+  },
+  "dockerfile": "../Dockerfile",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}

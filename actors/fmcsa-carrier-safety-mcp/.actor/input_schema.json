@@ -1,0 +1,89 @@
+{
+  "title": "FMCSA & USDOT Carrier Safety Search Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "dotNumber": {
+      "title": "USDOT Number",
+      "type": "string",
+      "description": "Official USDOT carrier number (digits only or with prefix, e.g. '22105').",
+      "editor": "textfield"
+    },
+    "mcNumber": {
+      "title": "MC / MX / FF Docket Number",
+      "type": "string",
+      "description": "Interstate Motor Carrier docket number (e.g. '202830' or 'MC-202830').",
+      "editor": "textfield"
+    },
+    "carrierName": {
+      "title": "Carrier Legal or DBA Name",
+      "type": "string",
+      "description": "Search by trucking company legal or DBA name (e.g. 'J B Hunt', 'Knight Transportation').",
+      "editor": "textfield"
+    },
+    "state": {
+      "title": "US State Code (2 letters)",
+      "type": "string",
+      "description": "Two-letter US state abbreviation for the carrier's physical address (e.g. 'TX', 'CA', 'IL').",
+      "editor": "textfield",
+      "maxLength": 2,
+      "prefill": "TX"
+    },
+    "city": {
+      "title": "Physical City",
+      "type": "string",
+      "description": "City of the carrier's physical address (uppercased automatically for USDOT matching).",
+      "editor": "textfield"
+    },
+    "statusCode": {
+      "title": "USDOT Status",
+      "type": "string",
+      "description": "Filter by active carriers ('A'), inactive ('I'), or all ('ALL').",
+      "enum": ["A", "I", "ALL"],
+      "default": "A",
+      "editor": "select"
+    },
+    "addedAfterDate": {
+      "title": "Added After Date (YYYY-MM-DD)",
+      "type": "string",
+      "description": "Find newly registered motor carriers added on or after this date (ideal for New Carrier Leads).",
+      "editor": "textfield"
+    },
+    "minPowerUnits": {
+      "title": "Minimum Fleet Size (Power Units)",
+      "type": "integer",
+      "description": "Minimum number of power units (trucks/tractors) operated by the carrier.",
+      "minimum": 0,
+      "default": 0
+    },
+    "hazmatOnly": {
+      "title": "Hazardous Materials (HazMat) Carriers Only",
+      "type": "boolean",
+      "description": "Filter strictly for carriers authorized to transport hazardous materials.",
+      "default": false
+    },
+    "includeAuthorityAndInsurance": {
+      "title": "Include MC Authority & BIPD Insurance Enrichment",
+      "type": "boolean",
+      "description": "Cross-reference FMCSA Licensing & Insurance datasets for active operating authority, BIPD limits, and insurer policies.",
+      "default": true
+    },
+    "maxRecords": {
+      "title": "Maximum Carrier Records",
+      "type": "integer",
+      "description": "Maximum number of carrier profiles to return (1–200).",
+      "minimum": 1,
+      "maximum": 200,
+      "default": 20,
+      "prefill": 10
+    },
+    "outputMode": {
+      "title": "Output Mode",
+      "type": "string",
+      "description": "Choose between detailed carrier dataset records or a compact MCP vetting summary.",
+      "enum": ["detailed", "mcp_summary"],
+      "default": "detailed",
+      "editor": "select"
+    }
+  }
+}

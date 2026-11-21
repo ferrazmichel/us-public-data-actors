@@ -271,3 +271,4 @@ def build_mcp_summary(
         },
         "flagged_high_risk_facilities": high_risk[:5],
     }
+

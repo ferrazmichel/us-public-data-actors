@@ -1,0 +1,44 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "USDOT / FMCSA Motor Carriers Overview",
+      "transformation": {
+        "fields": [
+          "dot_number",
+          "mc_number",
+          "legal_name",
+          "phy_state",
+          "status_code",
+          "vetting_verdict",
+          "safety_rating",
+          "power_units",
+          "total_drivers",
+          "bipd_on_file_usd",
+          "phone",
+          "email_address",
+          "safer_url"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "dot_number": { "label": "USDOT #", "format": "text" },
+          "mc_number": { "label": "MC / Docket #", "format": "text" },
+          "legal_name": { "label": "Legal Name", "format": "text" },
+          "phy_state": { "label": "State", "format": "text" },
+          "status_code": { "label": "Status", "format": "text" },
+          "vetting_verdict": { "label": "Vetting Verdict", "format": "text" },
+          "safety_rating": { "label": "Safety Rating", "format": "text" },
+          "power_units": { "label": "Power Units", "format": "number" },
+          "total_drivers": { "label": "Drivers", "format": "number" },
+          "bipd_on_file_usd": { "label": "BIPD Insurance ($)", "format": "number" },
+          "phone": { "label": "Phone", "format": "text" },
+          "email_address": { "label": "Email", "format": "text" },
+          "safer_url": { "label": "SAFER Snapshot", "format": "link" }
+        }
+      }
+    }
+  }
+}

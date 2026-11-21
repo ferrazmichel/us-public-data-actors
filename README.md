@@ -24,8 +24,8 @@ us-public-data-actors/
 | Ordem | Slug do Actor | Fonte Oficial EUA | Público / Caso de Uso | Status |
 | :--- | :--- | :--- | :--- | :--- |
 | **#1** | [`osha-safety-compliance-mcp`](actors/osha-safety-compliance-mcp) | DOL / OSHA Enforcement API (`apiprod.dol.gov/v4`) | Due diligence de fornecedores, seguradoras, escritórios jurídicos e agentes B2B | Publicado na Apify Store (PPE $5/1k) ✅ |
-| **#2** | [`epa-echo-environmental-mcp`](actors/epa-echo-environmental-mcp) | EPA ECHO REST API (`echodata.epa.gov`) | Consultorias ESG/ambientais, due diligence imobiliária e industrial | Construído, testado e publicado na Apify Platform (pronto para Store) ✅ |
-| **#3** | `fmcsa-carrier-safety-mcp` | USDOT / FMCSA (`data.transportation.gov`) | Seguradoras de carga, corretoras de frete, factoring e recrutamento | Planejado |
+| **#2** | [`epa-echo-environmental-mcp`](actors/epa-echo-environmental-mcp) | EPA ECHO REST API (`echodata.epa.gov`) | Consultorias ESG/ambientais, due diligence imobiliária e industrial | Publicado na Apify Store (PPE $5/1k) ✅ |
+| **#3** | [`fmcsa-carrier-safety-mcp`](actors/fmcsa-carrier-safety-mcp) | USDOT / FMCSA (`data.transportation.gov`) | Seguradoras de carga, corretoras de frete, factoring e recrutamento | Construído, testado ao vivo e enviado para a Apify Platform ✅ |
 
 ---
 
@@ -55,4 +55,5 @@ us-public-data-actors/
 | Solicitar `DOL_API_KEY` gratuita e executar teste real ponta a ponta no feriado | Usuário | ✅ |
 | Ajustar eventual detalhe de endpoint/campos após retorno real da API DOL | IA + Usuário | ✅ |
 | Publicar Actor #1 na Apify Store com cobrança PPE e suporte MCP | Usuário + IA | ✅ |
-| Construir e testar Actor #2 (`epa-echo-environmental-mcp`) | IA + Usuário | ⬜ |
+| Construir e publicar Actor #2 (`epa-echo-environmental-mcp`) na Apify Store | IA + Usuário | ✅ |
+| Construir, testar ao vivo e enviar Actor #3 (`fmcsa-carrier-safety-mcp`) para Apify Platform | IA + Usuário | ✅ |
