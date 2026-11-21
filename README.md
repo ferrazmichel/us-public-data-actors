@@ -17,7 +17,7 @@ us-public-data-actors/
     ├── osha-safety-compliance-mcp/ # Actor #1 (Publicado)
     ├── epa-echo-environmental-mcp/ # Actor #2 (Publicado)
     ├── fmcsa-carrier-safety-mcp/   # Actor #3 (Publicado)
-    └── usitc-hts-tariff-mcp/       # Actor #4 / Projeto #3 (Pronto para Apify Store)
+    └── usitc-hts-tariff-mcp/       # Actor #4 / Projeto #3 (Publicado)
 ```
 
 ---
@@ -29,7 +29,7 @@ us-public-data-actors/
 | **#1** | [`osha-safety-compliance-mcp`](actors/osha-safety-compliance-mcp) | DOL / OSHA Enforcement API (`apiprod.dol.gov/v4`) | Due diligence de fornecedores, seguradoras, escritórios jurídicos e agentes B2B | Publicado na Apify Store (PPE $5/1k) ✅ |
 | **#2** | [`epa-echo-environmental-mcp`](actors/epa-echo-environmental-mcp) | EPA ECHO REST API (`echodata.epa.gov`) | Consultorias ESG/ambientais, due diligence imobiliária e industrial | Publicado na Apify Store (PPE $5/1k) ✅ |
 | **#3** | [`fmcsa-carrier-safety-mcp`](actors/fmcsa-carrier-safety-mcp) | USDOT / FMCSA (`data.transportation.gov`) | Seguradoras de carga, corretoras de frete, factoring e recrutamento | Publicado na Apify Store (PPE $5/1k) ✅ |
-| **#4 (Proj. #3)** | [`usitc-hts-tariff-mcp`](actors/usitc-hts-tariff-mcp) | USITC HTS REST API (`hts.usitc.gov`) | Importadores EUA, lojistas Shopify/Amazon FBA, despachantes e agentes de sourcing | Build & deploy na Apify pronto para publicação 🚧 |
+| **#4 (Proj. #3)** | [`usitc-hts-tariff-mcp`](actors/usitc-hts-tariff-mcp) | USITC HTS REST API (`hts.usitc.gov`) | Importadores EUA, lojistas Shopify/Amazon FBA, despachantes e agentes de sourcing | Publicado na Apify Store (PPE $5/1k) ✅ |
 
 ---
 
@@ -62,4 +62,4 @@ us-public-data-actors/
 | Construir e publicar Actor #2 (`epa-echo-environmental-mcp`) na Apify Store | IA + Usuário | ✅ |
 | Construir e publicar Actor #3 (`fmcsa-carrier-safety-mcp`) na Apify Store | IA + Usuário | ✅ |
 | Construir Projeto #3 / Actor #4 (`usitc-hts-tariff-mcp`) e subir build na Apify | IA | ✅ |
-| Ajustar memória (512 MB), configurar PPE ($5/1k) e publicar Actor #4 na Apify Store | Usuário | ⬜ |
+| Ajustar memória (512 MB), configurar PPE ($5/1k) e publicar Actor #4 na Apify Store | Usuário | ✅ |

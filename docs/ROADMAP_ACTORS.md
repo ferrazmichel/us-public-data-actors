@@ -64,4 +64,4 @@
 | Pesquisa de endpoints reais + scaffold completo | `fmcsa-carrier-safety-mcp` | ✅ |
 | Teste real e publicação na Apify Store com PPE ($5.00/1k) | `fmcsa-carrier-safety-mcp` | ✅ |
 | Pesquisa de endpoints USITC HTS + scaffold + testes unitários e smoke test | `usitc-hts-tariff-mcp` | ✅ |
-| Publicação do Actor #4 / Projeto #3 na Apify Store com PPE ($5.00/1k) | `usitc-hts-tariff-mcp` | ⏳ Aguardando publicação final na Store |
+| Publicação do Actor #4 / Projeto #3 na Apify Store com PPE ($5.00/1k) | `usitc-hts-tariff-mcp` | ✅ |
