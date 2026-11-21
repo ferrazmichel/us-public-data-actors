@@ -1,0 +1,16 @@
+{
+  "actorSpecification": 1,
+  "name": "usitc-hts-tariff-mcp",
+  "title": "US Tariff, HTS Code & Landed Cost Calculator (MCP-Ready)",
+  "description": "Look up official USITC Harmonized Tariff Schedule (HTS) duty rates and compute complete US import landed costs: General MFN duties, USMCA/FTA exemptions, Chapter 99 (Section 301/232) tariffs, CBP MPF & HMF fees, and multi-country sourcing comparisons (China vs Vietnam vs Mexico) for AI agents.",
+  "version": "0.1",
+  "meta": {
+    "templateId": "python-start"
+  },
+  "dockerfile": "../Dockerfile",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}

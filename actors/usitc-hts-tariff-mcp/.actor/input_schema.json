@@ -1,0 +1,87 @@
+{
+  "title": "USITC HTS Tariff & Landed Cost Calculator Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "query": {
+      "title": "HTS Code or Product Keyword",
+      "type": "string",
+      "description": "10-digit, 8-digit, or 6-digit US HTS code (e.g. '8507.60', '8507.60.00.10', '9403.20') OR product description keyword (e.g. 'lithium-ion batteries', 'solar panels').",
+      "editor": "textfield",
+      "default": "8507.60",
+      "prefill": "8507.60"
+    },
+    "countryOfOrigin": {
+      "title": "Country of Origin (2-Letter ISO)",
+      "type": "string",
+      "description": "Two-letter ISO origin country code for landed cost calculation (e.g. 'CN', 'VN', 'MX', 'CA', 'KR', 'IN', 'TW', 'DE').",
+      "editor": "textfield",
+      "maxLength": 2,
+      "default": "CN",
+      "prefill": "CN"
+    },
+    "compareCountries": {
+      "title": "Sourcing Countries to Compare",
+      "type": "array",
+      "description": "Origin country codes to compare side-by-side in multi-country landed cost analysis (e.g. China vs. Vietnam vs. Mexico vs. South Korea).",
+      "editor": "stringList",
+      "default": ["CN", "VN", "MX", "KR"],
+      "prefill": ["CN", "VN", "MX", "KR"]
+    },
+    "shipmentValueUsd": {
+      "title": "Declared Shipment Customs Value (USD)",
+      "type": "number",
+      "description": "Commercial invoice customs value (FOB value) of the shipment in USD.",
+      "minimum": 1,
+      "default": 25000,
+      "prefill": 25000
+    },
+    "freightAndInsuranceUsd": {
+      "title": "International Freight & Insurance (USD)",
+      "type": "number",
+      "description": "Estimated international shipping and marine/air cargo insurance cost in USD.",
+      "minimum": 0,
+      "default": 1200,
+      "prefill": 1200
+    },
+    "transportMode": {
+      "title": "Transport Mode",
+      "type": "string",
+      "description": "Mode of arrival into the US. Harbor Maintenance Fee (HMF 0.125%) applies only to ocean shipments.",
+      "enum": ["ocean", "air", "truck"],
+      "default": "ocean",
+      "editor": "select"
+    },
+    "additionalTariffPercent": {
+      "title": "Override Additional Chapter 99 Tariff (%)",
+      "type": "number",
+      "description": "Optional override for Section 301 / Section 232 / reciprocal additional duty percentage on the primary countryOfOrigin. Leave blank to auto-estimate by country and HTS chapter.",
+      "minimum": 0,
+      "maximum": 500
+    },
+    "includeChapter99Notes": {
+      "title": "Include Related Chapter 99 USITC Provisions",
+      "type": "boolean",
+      "description": "Attach related Chapter 99 temporary tariff rules and suspensions returned in the USITC search tree.",
+      "default": true
+    },
+    "maxResults": {
+      "title": "Maximum HTS Records",
+      "type": "integer",
+      "description": "Maximum number of HTS tariff lines to calculate and return (1–100).",
+      "minimum": 1,
+      "maximum": 100,
+      "default": 10,
+      "prefill": 10
+    },
+    "outputMode": {
+      "title": "Output Mode",
+      "type": "string",
+      "description": "Choose between detailed tariff dataset records or a compact MCP landed-cost summary.",
+      "enum": ["detailed", "mcp_summary"],
+      "default": "detailed",
+      "editor": "select"
+    }
+  },
+  "required": ["query"]
+}

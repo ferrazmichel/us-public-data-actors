@@ -33,6 +33,15 @@
 
 ---
 
+## Actor #4 (Projeto #3) — `usitc-hts-tariff-mcp`
+
+- **Fonte oficial:** U.S. International Trade Commission (USITC) Harmonized Tariff Schedule REST API (`https://hts.usitc.gov/reststop/search`), gratuita e sem autenticação.
+- **Dor que resolve:** A API oficial retorna campos de tarifa vazios nos códigos estatísticos de 10 dígitos (`8507.60.00.10`), não calcula automaticamente isenções de Acordos de Livre Comércio (USMCA `MX`/`CA`, KORUS `KR`, etc.), nem soma tarifas adicionais do Capítulo 99 (Section 301/232) ou taxas alfandegárias CBP (**MPF** `0,3464%` e **HMF** `0,125%`).
+- **Diferencial MCP & E-commerce:** Herda tarifas da hierarquia pai automaticamente, calcula **Landed Cost** completo em USD e compara múltiplos países de origem lado a lado (`CN` vs. `VN` vs. `MX` vs. `KR`) para agentes de compras, Shopify/Amazon FBA e despachantes.
+- **Diretório:** [`actors/usitc-hts-tariff-mcp`](../actors/usitc-hts-tariff-mcp).
+
+---
+
 ## Backlog Futuro (Onda 2 — após os 3 primeiros estarem no ar)
 
 | Slug Sugerido | Fonte Oficial | Diferencial |
@@ -54,3 +63,5 @@
 | Teste real e publicação na Apify Store | `epa-echo-environmental-mcp` | ✅ |
 | Pesquisa de endpoints reais + scaffold completo | `fmcsa-carrier-safety-mcp` | ✅ |
 | Teste real e publicação na Apify Store com PPE ($5.00/1k) | `fmcsa-carrier-safety-mcp` | ✅ |
+| Pesquisa de endpoints USITC HTS + scaffold + testes unitários e smoke test | `usitc-hts-tariff-mcp` | ✅ |
+| Publicação do Actor #4 / Projeto #3 na Apify Store com PPE ($5.00/1k) | `usitc-hts-tariff-mcp` | ⏳ Aguardando publicação final na Store |

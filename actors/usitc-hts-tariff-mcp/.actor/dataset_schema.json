@@ -1,0 +1,40 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "USITC HTS Duty & Landed Cost Overview",
+      "transformation": {
+        "fields": [
+          "htsno",
+          "description",
+          "generalRateText",
+          "baseDutyPercent",
+          "countryOfOrigin",
+          "additionalTariffPercent",
+          "effectiveDutyAndFeePercent",
+          "totalDutiesAndFeesUsd",
+          "totalLandedCostUsd",
+          "bestAlternativeCountry",
+          "maxSourcingSavingsUsd"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "htsno": { "label": "HTS Code", "format": "text" },
+          "description": { "label": "Description", "format": "text" },
+          "generalRateText": { "label": "General MFN", "format": "text" },
+          "baseDutyPercent": { "label": "Base Duty %", "format": "number" },
+          "countryOfOrigin": { "label": "Origin", "format": "text" },
+          "additionalTariffPercent": { "label": "Add'l Ch.99 %", "format": "number" },
+          "effectiveDutyAndFeePercent": { "label": "Effective Rate %", "format": "number" },
+          "totalDutiesAndFeesUsd": { "label": "Duties & Fees ($)", "format": "number" },
+          "totalLandedCostUsd": { "label": "Total Landed Cost ($)", "format": "number" },
+          "bestAlternativeCountry": { "label": "Best Origin", "format": "text" },
+          "maxSourcingSavingsUsd": { "label": "Max Savings ($)", "format": "number" }
+        }
+      }
+    }
+  }
+}
