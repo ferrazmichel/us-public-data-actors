@@ -1,0 +1,74 @@
+{
+  "title": "FDA Drug, Medical Device & Food Recall Radar Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "domain": {
+      "title": "FDA Product Domain",
+      "type": "string",
+      "description": "Select which openFDA enforcement domain(s) to monitor: all domains in parallel, Medical Devices, Drugs, or Food/Dietary Supplements.",
+      "enum": ["all", "device", "drug", "food"],
+      "default": "all",
+      "editor": "select"
+    },
+    "searchQuery": {
+      "title": "Product Keyword / Brand / Reason",
+      "type": "string",
+      "description": "Search across product description, recall reason, brand name, or device name (e.g. 'catheter', 'pacemaker', 'listeria', 'insulin').",
+      "editor": "textfield"
+    },
+    "recallingFirm": {
+      "title": "Recalling Firm / Manufacturer",
+      "type": "string",
+      "description": "Filter by manufacturer, distributor, or recalling firm name (e.g. 'Medtronic', 'Pfizer', 'Abbott').",
+      "editor": "textfield"
+    },
+    "classification": {
+      "title": "FDA Hazard Classification",
+      "type": "string",
+      "description": "Class I = reasonable probability of serious adverse health consequences or death; Class II = medically reversible; Class III = unlikely harm.",
+      "enum": ["ALL", "Class I", "Class II", "Class III"],
+      "default": "Class I",
+      "editor": "select"
+    },
+    "status": {
+      "title": "Recall Enforcement Status",
+      "type": "string",
+      "description": "Filter by ongoing active recalls, completed, or terminated recalls.",
+      "enum": ["Ongoing", "Terminated", "Completed", "ALL"],
+      "default": "Ongoing",
+      "editor": "select"
+    },
+    "state": {
+      "title": "Recalling Firm US State (2 letters)",
+      "type": "string",
+      "description": "Optional two-letter US state abbreviation of the recalling firm (e.g. 'CA', 'TX', 'IL', 'NJ').",
+      "editor": "textfield",
+      "maxLength": 2
+    },
+    "reportDateFrom": {
+      "title": "Reported On or After (YYYY-MM-DD)",
+      "type": "string",
+      "description": "Optional minimum FDA Enforcement Report date in YYYY-MM-DD format (e.g. '2026-01-01').",
+      "editor": "textfield"
+    },
+    "maxRecords": {
+      "title": "Maximum Recall Records",
+      "type": "integer",
+      "description": "Maximum number of merged recall alerts to return (1–200).",
+      "minimum": 1,
+      "maximum": 200,
+      "default": 15,
+      "prefill": 10,
+      "editor": "number"
+    },
+    "outputMode": {
+      "title": "Output Mode",
+      "type": "string",
+      "description": "Choose between detailed recall dataset records or a compact MCP risk summary.",
+      "enum": ["detailed", "mcp_summary"],
+      "default": "detailed",
+      "editor": "select"
+    }
+  }
+}

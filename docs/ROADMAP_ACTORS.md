@@ -51,6 +51,14 @@
 
 ---
 
+## Actor #6 — `openfda-recall-device-radar`
+
+- **Fonte oficial:** U.S. FDA openFDA Enforcement REST APIs (`https://api.fda.gov/{drug|device|food}/enforcement.json`), gratuitas e sem API key obrigatória.
+- **Dor que resolve:** Unifica os 3 domínios de recalls da FDA (`drug`, `device` e `food`), abstrai a sintaxe Lucene do parâmetro `search`, trata retornos HTTP `404` em filtros sem resultado, converte datas para ISO `YYYY-MM-DD` e calcula `riskLevel` (`CRITICAL` para Class I ativo) + resumo MCP compacto (`OUTPUT`).
+- **Diretório:** [`actors/openfda-recall-device-radar`](../actors/openfda-recall-device-radar).
+
+---
+
 ## Backlog Futuro (Onda 2 — após os 3 primeiros estarem no ar)
 
 | Slug Sugerido | Fonte Oficial | Diferencial |
@@ -76,3 +84,5 @@
 | Publicação do Actor #4 / Projeto #3 na Apify Store com PPE ($5.00/1k) | `usitc-hts-tariff-mcp` | ✅ |
 | Motor 51 estados 2026 + testes unitários do Actor #5 | `us-1099-nec-state-compliance-mcp` | ✅ |
 | Publicação do Actor #5 na Apify Store com PPE ($5.00/1k) | `us-1099-nec-state-compliance-mcp` | ✅ |
+| APIs openFDA + testes unitários + smoke test ao vivo do Actor #6 | `openfda-recall-device-radar` | ✅ |
+| Publicação do Actor #6 na Apify Store com PPE ($5.00/1k) | `openfda-recall-device-radar` | ⏳ Aguardando publicação final na Store |

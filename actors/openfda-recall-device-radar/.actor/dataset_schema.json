@@ -1,0 +1,42 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "US FDA Enforcement Recalls Overview",
+      "transformation": {
+        "fields": [
+          "recallNumber",
+          "domain",
+          "riskLevel",
+          "classification",
+          "status",
+          "recallingFirm",
+          "state",
+          "reportDate",
+          "initiationDate",
+          "productDescription",
+          "reasonForRecall",
+          "distributionPattern"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "recallNumber": { "label": "Recall #", "format": "text" },
+          "domain": { "label": "Domain", "format": "text" },
+          "riskLevel": { "label": "Risk Level", "format": "text" },
+          "classification": { "label": "Class", "format": "text" },
+          "status": { "label": "Status", "format": "text" },
+          "recallingFirm": { "label": "Recalling Firm", "format": "text" },
+          "state": { "label": "State", "format": "text" },
+          "reportDate": { "label": "Report Date", "format": "text" },
+          "initiationDate": { "label": "Initiated", "format": "text" },
+          "productDescription": { "label": "Product", "format": "text" },
+          "reasonForRecall": { "label": "Reason for Recall", "format": "text" },
+          "distributionPattern": { "label": "Distribution", "format": "text" }
+        }
+      }
+    }
+  }
+}
