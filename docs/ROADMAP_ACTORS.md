@@ -75,4 +75,4 @@
 | Pesquisa de endpoints USITC HTS + scaffold + testes unitários e smoke test | `usitc-hts-tariff-mcp` | ✅ |
 | Publicação do Actor #4 / Projeto #3 na Apify Store com PPE ($5.00/1k) | `usitc-hts-tariff-mcp` | ✅ |
 | Motor 51 estados 2026 + testes unitários do Actor #5 | `us-1099-nec-state-compliance-mcp` | ✅ |
-| Publicação do Actor #5 na Apify Store com PPE ($5.00/1k) | `us-1099-nec-state-compliance-mcp` | ⏳ Aguardando publicação final na Store |
+| Publicação do Actor #5 na Apify Store com PPE ($5.00/1k) | `us-1099-nec-state-compliance-mcp` | ✅ |
