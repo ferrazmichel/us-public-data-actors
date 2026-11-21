@@ -16,8 +16,9 @@ us-public-data-actors/
 └── actors/
     ├── osha-safety-compliance-mcp/ # Actor #1 (Publicado)
     ├── epa-echo-environmental-mcp/ # Actor #2 (Publicado)
-    ├── fmcsa-carrier-safety-mcp/   # Actor #3 (Publicado)
-    └── usitc-hts-tariff-mcp/       # Actor #4 / Projeto #3 (Publicado)
+    ├── fmcsa-carrier-safety-mcp/          # Actor #3 (Publicado)
+    ├── usitc-hts-tariff-mcp/              # Actor #4 / Projeto #3 (Publicado)
+    └── us-1099-nec-state-compliance-mcp/  # Actor #5 (Build Apify pronto para publicação)
 ```
 
 ---
@@ -30,6 +31,7 @@ us-public-data-actors/
 | **#2** | [`epa-echo-environmental-mcp`](actors/epa-echo-environmental-mcp) | EPA ECHO REST API (`echodata.epa.gov`) | Consultorias ESG/ambientais, due diligence imobiliária e industrial | Publicado na Apify Store (PPE $5/1k) ✅ |
 | **#3** | [`fmcsa-carrier-safety-mcp`](actors/fmcsa-carrier-safety-mcp) | USDOT / FMCSA (`data.transportation.gov`) | Seguradoras de carga, corretoras de frete, factoring e recrutamento | Publicado na Apify Store (PPE $5/1k) ✅ |
 | **#4 (Proj. #3)** | [`usitc-hts-tariff-mcp`](actors/usitc-hts-tariff-mcp) | USITC HTS REST API (`hts.usitc.gov`) | Importadores EUA, lojistas Shopify/Amazon FBA, despachantes e agentes de sourcing | Publicado na Apify Store (PPE $5/1k) ✅ |
+| **#5** | [`us-1099-nec-state-compliance-mcp`](actors/us-1099-nec-state-compliance-mcp) | IRS IRC § 6041A / Regras Estaduais 2026 (50 Estados + DC) | Contadores (CPAs), ERPs, PMEs e agentes financeiros (trava \$2.000 vs. \$600 + 24% backup withholding) | Build & deploy na Apify pronto para publicação 🚧 |
 
 ---
 
@@ -63,3 +65,5 @@ us-public-data-actors/
 | Construir e publicar Actor #3 (`fmcsa-carrier-safety-mcp`) na Apify Store | IA + Usuário | ✅ |
 | Construir Projeto #3 / Actor #4 (`usitc-hts-tariff-mcp`) e subir build na Apify | IA | ✅ |
 | Ajustar memória (512 MB), configurar PPE ($5/1k) e publicar Actor #4 na Apify Store | Usuário | ✅ |
+| Construir Actor #5 (`us-1099-nec-state-compliance-mcp`) e subir build na Apify | IA | ✅ |
+| Ajustar memória (512 MB), configurar PPE ($5/1k) e publicar Actor #5 na Apify Store | Usuário | ⬜ |

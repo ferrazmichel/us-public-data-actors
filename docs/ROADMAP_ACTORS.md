@@ -42,6 +42,15 @@
 
 ---
 
+## Actor #5 — `us-1099-nec-state-compliance-mcp`
+
+- **Base normativa:** IRS Form 1099-NEC 2026 (teto federal de \$2.000), IRC §§ 6041A / 6050W / 3406 / 6721 e regras individuais dos **50 estados + D.C.**
+- **Dor que resolve:** Em 2026 o teto federal subiu de \$600 para **\$2.000**, mas ~20 estados mantiveram tetos estaduais menores (\$600 / \$1.000 / \$1.200) — e o IRS CF/SF não transmite para o estado quando não há envio federal. Além disso, falta de W-9 dispara **24% de backup withholding** desde \$0,01.
+- **Modos de operação:** Matriz dos 51 estados/DC (`states: ["ALL"]`) e auditoria em lote de fornecedores (`contractors: [...]`) para CPAs, ERPs e agentes contábeis.
+- **Diretório:** [`actors/us-1099-nec-state-compliance-mcp`](../actors/us-1099-nec-state-compliance-mcp).
+
+---
+
 ## Backlog Futuro (Onda 2 — após os 3 primeiros estarem no ar)
 
 | Slug Sugerido | Fonte Oficial | Diferencial |
@@ -65,3 +74,5 @@
 | Teste real e publicação na Apify Store com PPE ($5.00/1k) | `fmcsa-carrier-safety-mcp` | ✅ |
 | Pesquisa de endpoints USITC HTS + scaffold + testes unitários e smoke test | `usitc-hts-tariff-mcp` | ✅ |
 | Publicação do Actor #4 / Projeto #3 na Apify Store com PPE ($5.00/1k) | `usitc-hts-tariff-mcp` | ✅ |
+| Motor 51 estados 2026 + testes unitários do Actor #5 | `us-1099-nec-state-compliance-mcp` | ✅ |
+| Publicação do Actor #5 na Apify Store com PPE ($5.00/1k) | `us-1099-nec-state-compliance-mcp` | ⏳ Aguardando publicação final na Store |

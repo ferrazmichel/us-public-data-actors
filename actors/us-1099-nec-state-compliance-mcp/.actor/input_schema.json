@@ -1,0 +1,88 @@
+{
+  "title": "US 1099-NEC $2,000 Threshold & State Compliance Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "states": {
+      "title": "US States to Evaluate (or ['ALL'])",
+      "type": "array",
+      "description": "Two-letter US state codes (e.g. ['CA', 'NY', 'TX', 'PA', 'MA']) or ['ALL'] to evaluate all 50 states + DC. Ignored if 'contractors' batch array is provided.",
+      "editor": "stringList",
+      "default": ["CA", "NY", "TX", "PA", "MA", "FL", "IL", "NJ", "OR", "GA"],
+      "prefill": ["CA", "NY", "TX", "PA", "MA"]
+    },
+    "taxYear": {
+      "title": "Tax Year",
+      "type": "integer",
+      "description": "Tax year being audited. Federal 1099-NEC threshold jumped from $600 (2025) to $2,000 (2026), while many states kept $600.",
+      "minimum": 2025,
+      "maximum": 2026,
+      "default": 2026,
+      "editor": "number"
+    },
+    "paymentAmountUsd": {
+      "title": "Annual Gross Payments (USD)",
+      "type": "number",
+      "description": "Total annual contractor compensation in USD. Default $1,250 highlights the 2026 $600–$1,999 Federal-vs-State filing trap.",
+      "minimum": 0,
+      "default": 1250,
+      "prefill": 1250
+    },
+    "entityType": {
+      "title": "Contractor Entity Type",
+      "type": "string",
+      "description": "Payee tax classification from Form W-9.",
+      "enum": [
+        "individual_sole_prop",
+        "single_member_llc",
+        "partnership_llc",
+        "c_corp",
+        "s_corp",
+        "nonprofit"
+      ],
+      "default": "individual_sole_prop",
+      "editor": "select"
+    },
+    "paymentMethod": {
+      "title": "Payment Method",
+      "type": "string",
+      "description": "Credit card / third-party network payments (1099-K) are exempt from 1099-NEC reporting under IRC § 6050W.",
+      "enum": ["ach_wire_check_cash", "credit_card_1099k"],
+      "default": "ach_wire_check_cash",
+      "editor": "select"
+    },
+    "w9Verified": {
+      "title": "Signed Form W-9 / Valid TIN Verified",
+      "type": "boolean",
+      "description": "Whether a valid signed Form W-9 with TIN was collected before payment. False triggers mandatory 24% Federal backup withholding and $0.01 threshold filing.",
+      "default": true
+    },
+    "isAttorneyOrLegalServices": {
+      "title": "Attorney or Legal Services Payment",
+      "type": "boolean",
+      "description": "Payments for legal services are reportable on Form 1099-NEC even when paid to C-Corps or S-Corps.",
+      "default": false
+    },
+    "stateTaxWithheldUsd": {
+      "title": "State Income Tax Already Withheld (USD)",
+      "type": "number",
+      "description": "Any state income tax already withheld from the contractor during the year.",
+      "minimum": 0,
+      "default": 0
+    },
+    "contractors": {
+      "title": "Optional Batch Contractor List (JSON)",
+      "type": "array",
+      "description": "Optional array of contractor objects for batch vendor auditing: [{contractorId, name, state, paymentAmountUsd, entityType, paymentMethod, w9Verified, isAttorneyOrLegalServices, stateTaxWithheldUsd}].",
+      "editor": "json"
+    },
+    "outputMode": {
+      "title": "Output Mode",
+      "type": "string",
+      "description": "Choose between detailed dataset records or a compact MCP executive compliance summary.",
+      "enum": ["detailed", "mcp_summary"],
+      "default": "detailed",
+      "editor": "select"
+    }
+  }
+}

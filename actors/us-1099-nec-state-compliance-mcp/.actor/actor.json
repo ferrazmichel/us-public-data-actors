@@ -1,0 +1,16 @@
+{
+  "actorSpecification": 1,
+  "name": "us-1099-nec-state-compliance-mcp",
+  "title": "US 1099-NEC $2,000 Threshold, State Rules & Withholding (MCP)",
+  "description": "Audit 2026 US Form 1099-NEC compliance across all 50 states + DC: compares the new $2,000 Federal threshold vs. $600 State filing traps, IRS CF/SF vs. direct state e-filing portals, entity/credit-card exemptions, 24% backup withholding, and IRS penalty exposure for CPAs and AI agents.",
+  "version": "0.1",
+  "meta": {
+    "templateId": "python-start"
+  },
+  "dockerfile": "../Dockerfile",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}

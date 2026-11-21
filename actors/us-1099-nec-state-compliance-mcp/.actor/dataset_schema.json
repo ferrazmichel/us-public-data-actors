@@ -1,0 +1,44 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "US 1099-NEC Compliance & State Filing Overview",
+      "transformation": {
+        "fields": [
+          "contractorOrScenario",
+          "stateCode",
+          "stateName",
+          "paymentAmountUsd",
+          "complianceVerdict",
+          "federalFilingRequired",
+          "federalThresholdUsd",
+          "stateFilingRequired",
+          "stateThresholdUsd",
+          "directStatePortalRequired",
+          "totalBackupWithholdingUsd",
+          "federalDueDate",
+          "stateDueDate"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "contractorOrScenario": { "label": "Vendor / Scenario", "format": "text" },
+          "stateCode": { "label": "State", "format": "text" },
+          "stateName": { "label": "Jurisdiction", "format": "text" },
+          "paymentAmountUsd": { "label": "Payments ($)", "format": "number" },
+          "complianceVerdict": { "label": "Verdict", "format": "text" },
+          "federalFilingRequired": { "label": "Federal 1099?", "format": "boolean" },
+          "federalThresholdUsd": { "label": "Fed Threshold ($)", "format": "number" },
+          "stateFilingRequired": { "label": "State 1099?", "format": "boolean" },
+          "stateThresholdUsd": { "label": "State Threshold ($)", "format": "number" },
+          "directStatePortalRequired": { "label": "Direct Portal?", "format": "boolean" },
+          "totalBackupWithholdingUsd": { "label": "Withholding ($)", "format": "number" },
+          "federalDueDate": { "label": "Federal Due", "format": "text" },
+          "stateDueDate": { "label": "State Due", "format": "text" }
+        }
+      }
+    }
+  }
+}
