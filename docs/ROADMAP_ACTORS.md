@@ -53,4 +53,4 @@
 | Pesquisa de endpoints reais + scaffold completo | `epa-echo-environmental-mcp` | ✅ |
 | Teste real e publicação na Apify Store | `epa-echo-environmental-mcp` | ✅ |
 | Pesquisa de endpoints reais + scaffold completo | `fmcsa-carrier-safety-mcp` | ✅ |
-| Teste real e build na Apify Platform | `fmcsa-carrier-safety-mcp` | ✅ |
+| Teste real e publicação na Apify Store com PPE ($5.00/1k) | `fmcsa-carrier-safety-mcp` | ✅ |
