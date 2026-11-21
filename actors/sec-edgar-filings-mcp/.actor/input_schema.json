@@ -1,0 +1,59 @@
+{
+  "title": "SEC EDGAR Filings & XBRL Financials Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "tickersOrCiks": {
+      "title": "Stock Tickers or CIKs",
+      "type": "array",
+      "description": "US stock tickers (e.g. 'AAPL', 'NVDA', 'MSFT') or SEC CIK numbers (e.g. '0000320193'). Leave empty only when searching by companyName.",
+      "editor": "stringList",
+      "default": ["AAPL", "NVDA", "MSFT"],
+      "prefill": ["AAPL", "NVDA"]
+    },
+    "companyName": {
+      "title": "Optional Company Name Search",
+      "type": "string",
+      "description": "Search SEC EDGAR registered entities by company name when ticker or CIK is unknown (e.g. 'Berkshire Hathaway', 'Eli Lilly').",
+      "editor": "textfield"
+    },
+    "forms": {
+      "title": "SEC Form Types (or ['ALL'])",
+      "type": "array",
+      "description": "SEC filing form types to extract (e.g. ['10-K', '10-Q', '8-K', '4', 'DEF 14A', 'S-1']) or ['ALL'].",
+      "editor": "stringList",
+      "default": ["10-K", "10-Q", "8-K"],
+      "prefill": ["10-K", "10-Q", "8-K"]
+    },
+    "filingDateFrom": {
+      "title": "Minimum Filing Date (YYYY-MM-DD)",
+      "type": "string",
+      "description": "Optional earliest SEC filing date in YYYY-MM-DD format (e.g. '2026-01-01').",
+      "editor": "textfield"
+    },
+    "includeFinancialSnapshot": {
+      "title": "Include Audited 10-K XBRL Financial Snapshot",
+      "type": "boolean",
+      "description": "Fetch official US-GAAP XBRL CompanyFacts to attach latest Revenue, Net Income, Profit Margin %, Total Assets, Equity, and Cash.",
+      "default": true
+    },
+    "maxFilingsPerCompany": {
+      "title": "Max Filings per Company",
+      "type": "integer",
+      "description": "Maximum number of matching SEC filings to return per company (1–100).",
+      "minimum": 1,
+      "maximum": 100,
+      "default": 5,
+      "prefill": 5,
+      "editor": "number"
+    },
+    "outputMode": {
+      "title": "Output Mode",
+      "type": "string",
+      "description": "Choose between detailed filing dataset rows or a compact MCP financial intelligence summary.",
+      "enum": ["detailed", "mcp_summary"],
+      "default": "detailed",
+      "editor": "select"
+    }
+  }
+}

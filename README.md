@@ -19,7 +19,8 @@ us-public-data-actors/
     ├── fmcsa-carrier-safety-mcp/          # Actor #3 (Publicado)
     ├── usitc-hts-tariff-mcp/              # Actor #4 / Projeto #3 (Publicado)
     ├── us-1099-nec-state-compliance-mcp/  # Actor #5 (Publicado)
-    └── openfda-recall-device-radar/       # Actor #6 (Build Apify em andamento)
+    ├── openfda-recall-device-radar/       # Actor #6 (Publicado)
+    └── sec-edgar-filings-mcp/             # Actor #7 (Build Apify pronto para publicação)
 ```
 
 ---
@@ -33,7 +34,8 @@ us-public-data-actors/
 | **#3** | [`fmcsa-carrier-safety-mcp`](actors/fmcsa-carrier-safety-mcp) | USDOT / FMCSA (`data.transportation.gov`) | Seguradoras de carga, corretoras de frete, factoring e recrutamento | Publicado na Apify Store (PPE $5/1k) ✅ |
 | **#4 (Proj. #3)** | [`usitc-hts-tariff-mcp`](actors/usitc-hts-tariff-mcp) | USITC HTS REST API (`hts.usitc.gov`) | Importadores EUA, lojistas Shopify/Amazon FBA, despachantes e agentes de sourcing | Publicado na Apify Store (PPE $5/1k) ✅ |
 | **#5** | [`us-1099-nec-state-compliance-mcp`](actors/us-1099-nec-state-compliance-mcp) | IRS IRC § 6041A / Regras Estaduais 2026 (50 Estados + DC) | Contadores (CPAs), ERPs, PMEs e agentes financeiros (trava \$2.000 vs. \$600 + 24% backup withholding) | Publicado na Apify Store (PPE $5/1k) ✅ |
-| **#6** | [`openfda-recall-device-radar`](actors/openfda-recall-device-radar) | openFDA Enforcement APIs (`api.fda.gov`) | Hospitais, farmácias, escritórios jurídicos e supply chain (recalls Class I/II/III) | Build & deploy na Apify pronto para publicação 🚧 |
+| **#6** | [`openfda-recall-device-radar`](actors/openfda-recall-device-radar) | openFDA Enforcement APIs (`api.fda.gov`) | Hospitais, farmácias, escritórios jurídicos e supply chain (recalls Class I/II/III) | Publicado na Apify Store (PPE $5/1k) ✅ |
+| **#7** | [`sec-edgar-filings-mcp`](actors/sec-edgar-filings-mcp) | SEC EDGAR Submissions & XBRL Facts (`data.sec.gov`) | Equity research, analistas financeiros, fintechs e agentes de IA (10-K/10-Q/8-K) | Build & deploy na Apify pronto para publicação 🚧 |
 
 ---
 
@@ -70,4 +72,6 @@ us-public-data-actors/
 | Construir Actor #5 (`us-1099-nec-state-compliance-mcp`) e subir build na Apify | IA | ✅ |
 | Ajustar memória (512 MB), configurar PPE ($5/1k) e publicar Actor #5 na Apify Store | Usuário | ✅ |
 | Construir Actor #6 (`openfda-recall-device-radar`) e subir build na Apify | IA | ✅ |
-| Ajustar memória (512 MB), configurar PPE ($5/1k) e publicar Actor #6 na Apify Store | Usuário | ⬜ |
+| Ajustar memória (512 MB), configurar PPE ($5/1k) e publicar Actor #6 na Apify Store | Usuário | ✅ |
+| Construir Actor #7 (`sec-edgar-filings-mcp`) e subir build na Apify | IA | ✅ |
+| Ajustar memória (512 MB), configurar PPE ($5/1k) e publicar Actor #7 na Apify Store | Usuário | ⬜ |

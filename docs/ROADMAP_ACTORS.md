@@ -59,6 +59,14 @@
 
 ---
 
+## Actor #7 — `sec-edgar-filings-mcp`
+
+- **Fonte oficial:** U.S. SEC EDGAR Submissions & XBRL CompanyFacts APIs (`https://data.sec.gov/submissions/` e `/api/xbrl/companyfacts/`), gratuitas e sem API key.
+- **Dor que resolve:** Converte arquivos JSON XBRL de ~4 MB da SEC em snapshots GAAP enxutos (Receita, Lucro Líquido, Margem Líquida %, Ativos Totais, Patrimônio Líquido e Caixa dos últimos `10-K`), decodifica itens de eventos materiais `8-K` e gera URLs diretas dos documentos na SEC Archives.
+- **Diretório:** [`actors/sec-edgar-filings-mcp`](../actors/sec-edgar-filings-mcp).
+
+---
+
 ## Backlog Futuro (Onda 2 — após os 3 primeiros estarem no ar)
 
 | Slug Sugerido | Fonte Oficial | Diferencial |
@@ -85,4 +93,6 @@
 | Motor 51 estados 2026 + testes unitários do Actor #5 | `us-1099-nec-state-compliance-mcp` | ✅ |
 | Publicação do Actor #5 na Apify Store com PPE ($5.00/1k) | `us-1099-nec-state-compliance-mcp` | ✅ |
 | APIs openFDA + testes unitários + smoke test ao vivo do Actor #6 | `openfda-recall-device-radar` | ✅ |
-| Publicação do Actor #6 na Apify Store com PPE ($5.00/1k) | `openfda-recall-device-radar` | ⏳ Aguardando publicação final na Store |
+| Publicação do Actor #6 na Apify Store com PPE ($5.00/1k) | `openfda-recall-device-radar` | ✅ |
+| APIs SEC EDGAR Submissions & XBRL + testes do Actor #7 | `sec-edgar-filings-mcp` | ✅ |
+| Publicação do Actor #7 na Apify Store com PPE ($5.00/1k) | `sec-edgar-filings-mcp` | ⏳ Aguardando publicação final na Store |

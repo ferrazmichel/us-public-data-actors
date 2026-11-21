@@ -1,0 +1,44 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "SEC EDGAR Filings & Audited GAAP Snapshot",
+      "transformation": {
+        "fields": [
+          "ticker",
+          "companyName",
+          "cik",
+          "form",
+          "filingDate",
+          "reportDate",
+          "items8KDecoded",
+          "latestAnnualRevenueUsd",
+          "latestAnnualNetIncomeUsd",
+          "netProfitMarginPercent",
+          "totalAssetsUsd",
+          "cashAndEquivalentsUsd",
+          "documentUrl"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "ticker": { "label": "Ticker", "format": "text" },
+          "companyName": { "label": "Company", "format": "text" },
+          "cik": { "label": "CIK", "format": "text" },
+          "form": { "label": "Form", "format": "text" },
+          "filingDate": { "label": "Filed", "format": "text" },
+          "reportDate": { "label": "Period", "format": "text" },
+          "items8KDecoded": { "label": "8-K Events", "format": "text" },
+          "latestAnnualRevenueUsd": { "label": "10-K Revenue ($)", "format": "number" },
+          "latestAnnualNetIncomeUsd": { "label": "10-K Net Income ($)", "format": "number" },
+          "netProfitMarginPercent": { "label": "Net Margin %", "format": "number" },
+          "totalAssetsUsd": { "label": "Total Assets ($)", "format": "number" },
+          "cashAndEquivalentsUsd": { "label": "Cash ($)", "format": "number" },
+          "documentUrl": { "label": "SEC Document", "format": "link" }
+        }
+      }
+    }
+  }
+}
