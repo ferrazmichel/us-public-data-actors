@@ -97,3 +97,37 @@ Query official **US Department of Labor (DOL) OSHA** workplace safety inspection
 ## Using with AI Agents via Apify MCP
 
 Connect this Actor directly to **Claude Desktop, Cursor, LangGraph, or CrewAI** via Apify's official MCP server (`https://mcp.apify.com`) using OAuth or your Apify token. Always prefer `outputMode: "mcp_summary"` inside interactive chat sessions for fast responses and minimal token usage.
+
+### Remote HTTP (Recommended — OAuth)
+
+```json
+{
+  "mcpServers": {
+    "osha-safety-compliance": {
+      "transport": "http",
+      "url": "https://mcp.apify.com/?actors=ferraz_michel/osha-safety-compliance-mcp"
+    }
+  }
+}
+```
+
+### Local `npx` (`@apify/actors-mcp-server`)
+
+```json
+{
+  "mcpServers": {
+    "osha-safety-compliance": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@apify/actors-mcp-server",
+        "--actors",
+        "ferraz_michel/osha-safety-compliance-mcp"
+      ],
+      "env": {
+        "APIFY_TOKEN": "YOUR_APIFY_TOKEN"
+      }
+    }
+  }
+}
+```

@@ -62,3 +62,43 @@
   "flagged_carriers": []
 }
 ```
+
+---
+
+## Connect via MCP (Claude Desktop, Cursor & AI Agents)
+
+Connect this Actor directly via Apify's official MCP server (`https://mcp.apify.com`). Always prefer `outputMode: "mcp_summary"` inside interactive chat sessions for fast responses and minimal token usage.
+
+### Remote HTTP (Recommended — OAuth)
+
+```json
+{
+  "mcpServers": {
+    "fmcsa-carrier-safety": {
+      "transport": "http",
+      "url": "https://mcp.apify.com/?actors=ferraz_michel/fmcsa-carrier-safety-mcp"
+    }
+  }
+}
+```
+
+### Local `npx` (`@apify/actors-mcp-server`)
+
+```json
+{
+  "mcpServers": {
+    "fmcsa-carrier-safety": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@apify/actors-mcp-server",
+        "--actors",
+        "ferraz_michel/fmcsa-carrier-safety-mcp"
+      ],
+      "env": {
+        "APIFY_TOKEN": "YOUR_APIFY_TOKEN"
+      }
+    }
+  }
+}
+```

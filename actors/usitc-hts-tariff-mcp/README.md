@@ -56,3 +56,43 @@
   ]
 }
 ```
+
+---
+
+## Connect via MCP (Claude Desktop, Cursor & AI Agents)
+
+Connect this Actor directly via Apify's official MCP server (`https://mcp.apify.com`). Always prefer `outputMode: "mcp_summary"` inside interactive chat sessions for fast responses and minimal token usage.
+
+### Remote HTTP (Recommended — OAuth)
+
+```json
+{
+  "mcpServers": {
+    "usitc-hts-tariff": {
+      "transport": "http",
+      "url": "https://mcp.apify.com/?actors=ferraz_michel/usitc-hts-tariff-mcp"
+    }
+  }
+}
+```
+
+### Local `npx` (`@apify/actors-mcp-server`)
+
+```json
+{
+  "mcpServers": {
+    "usitc-hts-tariff": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@apify/actors-mcp-server",
+        "--actors",
+        "ferraz_michel/usitc-hts-tariff-mcp"
+      ],
+      "env": {
+        "APIFY_TOKEN": "YOUR_APIFY_TOKEN"
+      }
+    }
+  }
+}
+```
