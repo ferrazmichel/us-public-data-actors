@@ -2,15 +2,15 @@
   "actorOutputSchemaVersion": 1,
   "title": "OSHA Safety & Compliance Output",
   "properties": {
-    "summary": {
-      "type": "string",
-      "title": "MCP Executive Risk Summary",
-      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys/OUTPUT"
-    },
     "inspections": {
       "type": "string",
       "title": "Inspections Dataset",
       "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "summary": {
+      "type": "string",
+      "title": "MCP Executive Risk Summary",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
     }
   }
 }

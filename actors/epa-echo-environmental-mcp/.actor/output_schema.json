@@ -2,15 +2,15 @@
   "actorOutputSchemaVersion": 1,
   "title": "EPA ECHO Environmental Compliance Output",
   "properties": {
-    "summary": {
-      "type": "string",
-      "title": "MCP Executive Environmental Risk Summary",
-      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys/OUTPUT"
-    },
     "facilities": {
       "type": "string",
       "title": "Regulated Facilities Dataset",
       "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "summary": {
+      "type": "string",
+      "title": "MCP Executive Environmental Risk Summary",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
     }
   }
 }

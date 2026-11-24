@@ -2,15 +2,15 @@
   "actorOutputSchemaVersion": 1,
   "title": "USAspending Federal Contracts & Re-Compete Radar Output",
   "properties": {
-    "summary": {
-      "type": "string",
-      "title": "MCP Executive GovCon & Re-Compete Summary",
-      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys/OUTPUT"
-    },
     "awards": {
       "type": "string",
       "title": "USAspending Federal Awards Dataset",
       "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "summary": {
+      "type": "string",
+      "title": "MCP Executive GovCon & Re-Compete Summary",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
     }
   }
 }

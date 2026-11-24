@@ -2,15 +2,15 @@
   "actorOutputSchemaVersion": 1,
   "title": "openFDA Recall & Enforcement Radar Output",
   "properties": {
-    "summary": {
-      "type": "string",
-      "title": "MCP Executive Recall & Risk Summary",
-      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys/OUTPUT"
-    },
     "recalls": {
       "type": "string",
       "title": "FDA Recall Enforcement Dataset",
       "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "summary": {
+      "type": "string",
+      "title": "MCP Executive Recall & Risk Summary",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
     }
   }
 }

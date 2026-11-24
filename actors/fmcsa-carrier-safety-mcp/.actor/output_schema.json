@@ -2,15 +2,15 @@
   "actorOutputSchemaVersion": 1,
   "title": "FMCSA Carrier Safety & Vetting Output",
   "properties": {
-    "summary": {
-      "type": "string",
-      "title": "MCP Executive Vetting & Risk Summary",
-      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys/OUTPUT"
-    },
     "carriers": {
       "type": "string",
       "title": "Motor Carriers Dataset",
       "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "summary": {
+      "type": "string",
+      "title": "MCP Executive Vetting & Risk Summary",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
     }
   }
 }

@@ -2,15 +2,15 @@
   "actorOutputSchemaVersion": 1,
   "title": "US 1099-NEC $2,000 Threshold & State Compliance Output",
   "properties": {
-    "summary": {
-      "type": "string",
-      "title": "MCP Executive 1099-NEC Compliance & Risk Summary",
-      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys/OUTPUT"
-    },
     "complianceRecords": {
       "type": "string",
       "title": "1099-NEC Compliance Records Dataset",
       "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "summary": {
+      "type": "string",
+      "title": "MCP Executive 1099-NEC Compliance & Risk Summary",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
     }
   }
 }

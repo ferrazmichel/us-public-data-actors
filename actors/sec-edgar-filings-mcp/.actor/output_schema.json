@@ -2,15 +2,15 @@
   "actorOutputSchemaVersion": 1,
   "title": "SEC EDGAR Filings & XBRL Financials Output",
   "properties": {
-    "summary": {
-      "type": "string",
-      "title": "MCP Executive Financial & Filings Summary",
-      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys/OUTPUT"
-    },
     "filings": {
       "type": "string",
       "title": "SEC EDGAR Filings & GAAP Metrics Dataset",
       "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "summary": {
+      "type": "string",
+      "title": "MCP Executive Financial & Filings Summary",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
     }
   }
 }

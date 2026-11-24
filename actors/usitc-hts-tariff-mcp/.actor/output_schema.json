@@ -2,15 +2,15 @@
   "actorOutputSchemaVersion": 1,
   "title": "USITC HTS Tariff & Landed Cost Output",
   "properties": {
-    "summary": {
-      "type": "string",
-      "title": "MCP Executive Tariff & Landed Cost Summary",
-      "template": "{{links.apiDefaultKeyValueStoreUrl}}/keys/OUTPUT"
-    },
     "htsItems": {
       "type": "string",
       "title": "HTS Tariff & Landed Cost Dataset",
       "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "summary": {
+      "type": "string",
+      "title": "MCP Executive Tariff & Landed Cost Summary",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/OUTPUT"
     }
   }
 }
