@@ -70,13 +70,12 @@ async def main() -> None:
                 cfg.addedAfterDate,
             ]
         ):
-            await Actor.fail(
-                status_message=(
-                    "Provide at least one filter: 'dotNumber', 'mcNumber', "
-                    "'carrierName', 'state', 'city', or 'addedAfterDate'."
-                )
+            Actor.log.warning(
+                "No carrier search filters provided; falling back to default sample query "
+                "(state='TX', maxRecords<=10)."
             )
-            return
+            cfg.state = "TX"
+            cfg.maxRecords = min(cfg.maxRecords, 10)
 
         Actor.log.info(
             "Querying USDOT/FMCSA (dot=%r, mc=%r, name=%r, state=%r, max=%d, enrich=%s)",

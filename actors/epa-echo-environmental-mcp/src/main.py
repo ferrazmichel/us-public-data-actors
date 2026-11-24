@@ -57,13 +57,13 @@ async def main() -> None:
         cfg = ActorInput.model_validate(raw_input)
 
         if not any([cfg.facilityName, cfg.state, cfg.city, cfg.zipCode, cfg.naicsCode]):
-            await Actor.fail(
-                status_message=(
-                    "At least one search filter must be provided: 'facilityName', "
-                    "'state', 'city', 'zipCode', or 'naicsCode'."
-                )
+            Actor.log.warning(
+                "No search filters provided; falling back to default sample query "
+                "(state='OH', significantNonComplianceOnly=True, maxRecords<=10)."
             )
-            return
+            cfg.state = "OH"
+            cfg.significantNonComplianceOnly = True
+            cfg.maxRecords = min(cfg.maxRecords, 10)
 
         Actor.log.info(
             "Starting EPA ECHO facility search (name=%r, state=%r, city=%r, max=%d, SNC_only=%s)",

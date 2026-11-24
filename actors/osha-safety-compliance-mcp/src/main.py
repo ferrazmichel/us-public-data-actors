@@ -105,13 +105,13 @@ async def main() -> None:
                 cfg.openDateTo,
             ]
         ):
-            await Actor.fail(
-                status_message=(
-                    "Provide at least one search filter (establishmentName, state, "
-                    "naicsCode, openDateFrom, or openDateTo) to avoid unbounded queries."
-                )
+            Actor.log.warning(
+                "No search filters provided; falling back to default sample query "
+                "(establishmentName='Amazon', state='TX', maxRecords<=10)."
             )
-            return
+            cfg.establishmentName = "Amazon"
+            cfg.state = "TX"
+            cfg.maxRecords = min(cfg.maxRecords, 10)
 
         Actor.log.info(
             "Querying DOL OSHA inspections (name=%r, state=%r, naics=%r, max=%d)",

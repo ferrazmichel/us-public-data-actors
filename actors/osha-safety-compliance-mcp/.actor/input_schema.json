@@ -16,7 +16,8 @@
       "description": "Optional two-letter US state abbreviation (e.g. TX, CA, NY, OH).",
       "editor": "textfield",
       "maxLength": 2,
-      "pattern": "^[A-Za-z]{2}$"
+      "pattern": "^[A-Za-z]{2}$",
+      "prefill": "TX"
     },
     "naicsCode": {
       "title": "NAICS Industry Code",
@@ -49,6 +50,7 @@
       "type": "integer",
       "description": "Maximum number of inspections to retrieve across paginated DOL API calls.",
       "default": 50,
+      "prefill": 10,
       "minimum": 1,
       "maximum": 1000
     },

@@ -13,7 +13,7 @@ from .hts_client import HtsApiError, HtsClient, build_mcp_summary
 class ActorInput(BaseModel):
     """Validated Actor input schema."""
 
-    query: str = Field(min_length=1)
+    query: str = Field(default="8507.60", min_length=1)
     countryOfOrigin: str = Field(default="CN", min_length=2, max_length=2)
     compareCountries: list[str] = Field(default_factory=lambda: ["CN", "VN", "MX", "KR"])
     shipmentValueUsd: float = Field(default=25000.0, gt=0)
@@ -23,6 +23,16 @@ class ActorInput(BaseModel):
     includeChapter99Notes: bool = Field(default=True)
     maxResults: int = Field(default=10, ge=1, le=100)
     outputMode: Literal["detailed", "mcp_summary"] = Field(default="detailed")
+
+    @field_validator("query", mode="before")
+    @classmethod
+    def _normalize_query(cls, value: object) -> object:
+        if value is None:
+            return "8507.60"
+        if isinstance(value, str):
+            cleaned = value.strip()
+            return cleaned or "8507.60"
+        return value
 
     @field_validator("countryOfOrigin", mode="before")
     @classmethod
@@ -61,6 +71,10 @@ async def main() -> None:
     """Run the USITC HTS Tariff & Landed Cost Calculator Actor."""
     async with Actor:
         raw_input = await Actor.get_input() or {}
+        if not str(raw_input.get("query") or "").strip():
+            Actor.log.warning(
+                "No 'query' provided; falling back to default sample HTS query '8507.60'."
+            )
         cfg = ActorInput.model_validate(raw_input)
 
         Actor.log.info(
