@@ -1,0 +1,42 @@
+{
+  "actorSpecification": 1,
+  "fields": {},
+  "views": {
+    "overview": {
+      "title": "USAspending Federal Contracts & Re-Compete Radar",
+      "transformation": {
+        "fields": [
+          "awardId",
+          "recipientName",
+          "awardAmountUsd",
+          "awardingAgency",
+          "awardingSubAgency",
+          "placeOfPerformanceState",
+          "startDate",
+          "endDate",
+          "daysUntilExpiration",
+          "recompetePriority",
+          "description",
+          "awardUrl"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "awardId": { "label": "Award ID", "format": "text" },
+          "recipientName": { "label": "Incumbent / Recipient", "format": "text" },
+          "awardAmountUsd": { "label": "Amount ($)", "format": "number" },
+          "awardingAgency": { "label": "Agency", "format": "text" },
+          "awardingSubAgency": { "label": "Sub-Agency", "format": "text" },
+          "placeOfPerformanceState": { "label": "State", "format": "text" },
+          "startDate": { "label": "Start Date", "format": "text" },
+          "endDate": { "label": "End Date", "format": "text" },
+          "daysUntilExpiration": { "label": "Days Left", "format": "number" },
+          "recompetePriority": { "label": "Re-Compete Status", "format": "text" },
+          "description": { "label": "Description", "format": "text" },
+          "awardUrl": { "label": "USAspending Link", "format": "link" }
+        }
+      }
+    }
+  }
+}

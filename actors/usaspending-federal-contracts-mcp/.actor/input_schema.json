@@ -1,0 +1,96 @@
+{
+  "title": "USAspending Federal Contracts & Re-Compete Radar Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "keywords": {
+      "title": "Keywords",
+      "type": "array",
+      "description": "Search keywords in contract/grant descriptions (e.g. ['cybersecurity', 'cloud']).",
+      "editor": "stringList",
+      "default": ["cybersecurity"],
+      "prefill": ["cybersecurity"]
+    },
+    "recipientNames": {
+      "title": "Incumbent / Recipient Names",
+      "type": "array",
+      "description": "Optional list of contractor or recipient company names to filter (e.g. ['LOCKHEED MARTIN']).",
+      "editor": "stringList",
+      "default": []
+    },
+    "naicsCodes": {
+      "title": "NAICS Codes",
+      "type": "array",
+      "description": "Optional 2- to 6-digit NAICS industry codes (e.g. ['541512', '541519']).",
+      "editor": "stringList",
+      "default": []
+    },
+    "awardingAgency": {
+      "title": "Awarding Top-Tier Agency",
+      "type": "string",
+      "description": "Optional US federal awarding agency name (e.g. 'Department of Defense', 'General Services Administration').",
+      "editor": "textfield"
+    },
+    "placeOfPerformanceState": {
+      "title": "Place of Performance State (2-letter US Code)",
+      "type": "string",
+      "description": "Optional two-letter US state code (e.g. 'VA', 'TX', 'CA').",
+      "editor": "textfield"
+    },
+    "awardType": {
+      "title": "Award Type",
+      "type": "string",
+      "description": "Filter by prime federal contracts (A/B/C/D), grants (02-05), or both.",
+      "enum": ["contracts", "grants", "all"],
+      "default": "contracts",
+      "editor": "select"
+    },
+    "minAwardAmountUsd": {
+      "title": "Minimum Award Amount (USD)",
+      "type": "number",
+      "description": "Optional minimum contract/grant dollar amount.",
+      "minimum": 0,
+      "editor": "number"
+    },
+    "startDateFrom": {
+      "title": "Start Date From (YYYY-MM-DD)",
+      "type": "string",
+      "description": "Earliest award period date in YYYY-MM-DD format.",
+      "default": "2024-01-01",
+      "editor": "textfield"
+    },
+    "endDateTo": {
+      "title": "End Date To (YYYY-MM-DD)",
+      "type": "string",
+      "description": "Latest award period date in YYYY-MM-DD format.",
+      "default": "2027-12-31",
+      "editor": "textfield"
+    },
+    "expiringWithinDays": {
+      "title": "Re-Compete Radar: Expiring Within Days",
+      "type": "integer",
+      "description": "Optional filter returning only active contracts expiring within the next N days (1-1095), sorted by soonest expiration.",
+      "minimum": 1,
+      "maximum": 1095,
+      "editor": "number"
+    },
+    "maxRecords": {
+      "title": "Max Records",
+      "type": "integer",
+      "description": "Maximum number of federal awards to return (1-200).",
+      "minimum": 1,
+      "maximum": 200,
+      "default": 25,
+      "prefill": 25,
+      "editor": "number"
+    },
+    "outputMode": {
+      "title": "Output Mode",
+      "type": "string",
+      "description": "Choose detailed dataset rows or a compact MCP Re-Compete summary.",
+      "enum": ["detailed", "mcp_summary"],
+      "default": "detailed",
+      "editor": "select"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "actorSpecification": 1,
+  "name": "usaspending-federal-contracts-mcp",
+  "title": "USAspending Federal Contracts & Re-Compete Radar (MCP-Ready)",
+  "description": "Search official US federal contracts and grants via USAspending.gov without an API key. Filter by keyword, NAICS, agency, state, recipient, or expiring contracts (Re-Compete Radar) with compact 2KB MCP summaries for GovCon and AI agents.",
+  "version": "0.1",
+  "meta": {
+    "templateId": "python-start"
+  },
+  "dockerfile": "../Dockerfile",
+  "input": "./input_schema.json",
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
+}
