@@ -21,7 +21,7 @@ us-public-data-actors/
     ├── us-1099-nec-state-compliance-mcp/  # Actor #5 (Publicado)
     ├── openfda-recall-device-radar/           # Actor #6 (Publicado)
     ├── sec-edgar-filings-mcp/                 # Actor #7 (Publicado)
-    └── usaspending-federal-contracts-mcp/     # Actor #8 (Código pronto para deploy)
+    └── usaspending-federal-contracts-mcp/     # Actor #8 (Publicado)
 ```
 
 ---
@@ -37,7 +37,7 @@ us-public-data-actors/
 | **#5** | [`us-1099-nec-state-compliance-mcp`](actors/us-1099-nec-state-compliance-mcp) | IRS IRC § 6041A / Regras Estaduais 2026 (50 Estados + DC) | Contadores (CPAs), ERPs, PMEs e agentes financeiros (trava \$2.000 vs. \$600 + 24% backup withholding) | Publicado na Apify Store (PPE $5/1k) ✅ |
 | **#6** | [`openfda-recall-device-radar`](actors/openfda-recall-device-radar) | openFDA Enforcement APIs (`api.fda.gov`) | Hospitais, farmácias, escritórios jurídicos e supply chain (recalls Class I/II/III) | Publicado na Apify Store (PPE $5/1k) ✅ |
 | **#7** | [`sec-edgar-filings-mcp`](actors/sec-edgar-filings-mcp) | SEC EDGAR Submissions & XBRL Facts (`data.sec.gov`) | Equity research, analistas financeiros, fintechs e agentes de IA (10-K/10-Q/8-K) | Publicado na Apify Store (PPE $5/1k) ✅ |
-| **#8** | [`usaspending-federal-contracts-mcp`](actors/usaspending-federal-contracts-mcp) | USAspending.gov API v2 (`api.usaspending.gov`) | Empresas GovCon, inteligência comercial, contratos federais & Re-Compete Radar | Código & testes prontos; pendente `pytest` + `apify push` em casa 🚧 |
+| **#8** | [`usaspending-federal-contracts-mcp`](actors/usaspending-federal-contracts-mcp) | USAspending.gov API v2 (`api.usaspending.gov`) | Empresas GovCon, inteligência comercial, contratos federais & Re-Compete Radar | Publicado na Apify Store (PPE $5/1k) ✅ |
 
 ---
 
@@ -78,4 +78,4 @@ us-public-data-actors/
 | Construir Actor #7 (`sec-edgar-filings-mcp`) e subir build na Apify | IA | ✅ |
 | Ajustar memória (512 MB), configurar PPE ($5/1k) e publicar Actor #7 na Apify Store | Usuário | ✅ |
 | Construir Actor #8 (`usaspending-federal-contracts-mcp`) + testes unitários | IA | ✅ |
-| Rodar `pytest`, subir build (`512 MB`, PPE $5/1k) e publicar Actor #8 na Apify Store | Usuário | ⬜ |
+| Subir build (`512 MB`, PPE $5/1k + Store discounts) e publicar Actor #8 na Apify Store | Usuário + IA | ✅ |
