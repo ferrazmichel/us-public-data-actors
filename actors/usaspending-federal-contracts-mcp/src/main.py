@@ -46,23 +46,6 @@ class ActorInput(BaseModel):
         return value
 
 
-async def _safe_charge(event_name: str, count: int = 1) -> None:
-    """Charge Pay-Per-Event when running in a monetized Apify environment."""
-    if count <= 0:
-        return
-    try:
-        charge_fn = getattr(Actor, "charge", None)
-        if callable(charge_fn):
-            await charge_fn(event_name=event_name, count=count)
-    except Exception as exc:  # noqa: BLE001 - local runs lack PPE configuration
-        Actor.log.debug(
-            "Skipping PPE charge '%s' (count=%d) in non-monetized context: %s",
-            event_name,
-            count,
-            exc,
-        )
-
-
 async def main() -> None:
     """Run the USAspending Federal Contracts & Re-Compete Radar Actor."""
     async with Actor:
@@ -102,8 +85,8 @@ async def main() -> None:
         Actor.log.info("USAspending returned %d federal award record(s).", len(records))
 
         if cfg.outputMode != "mcp_summary" and records:
+            # Apify automatically charges the synthetic 'apify-default-dataset-item' PPE event on push_data.
             await Actor.push_data([r.model_dump() for r in records])
-            await _safe_charge("contract-award-record", count=len(records))
 
         criteria = {
             "keywords": cfg.keywords,
